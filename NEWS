@@ -1,0 +1,45 @@
+March 25th, 2002, 0.8.10
+-	Fixed the bug where monsters just froze after playing
+	a while.
+-	Endianness autodetected by SDL
+-	Minor bugfixes
+
+September 17th, 2001, 0.8.9
+-	Fixed compilation bug under Linux Mandrake 8.0 (gcc 2.96)
+-	Simplified configuration of the build process
+
+February 27th, 2000, 0.8.8
+-	Compiles smoother with SDL 1.0
+-	Using sdl-config in the Makefile
+-	Minor bugfixes
+
+November 18th, 1999, 0.8.7
+-	An old version of ObjInfo.cpp was included with
+	version 0.8.6, that prevented the game from running
+	on big-endian machines.
+
+November 11th, 1999: 0.8.6
+-	Compiles and works under SPARC/Solaris
+	Check the TARGET_ARCH variable in the Makefile!
+
+October 30th, 1999: 0.8.5
+-	Compiles without libXpm (no icon)
+
+October 18th, 1999: 0.8.4
+-	Even cleaner sound system :)
+
+September 4th, 1999: 0.8.3
+-	Fixed a bug that crashed the game in some situations if you
+	had no sound card.
+
+September 3rd, 1999: 0.8.2
+-	Fixed some bugs in ObjInfo.cpp and ShapeLd.cpp that prevented
+	compilation with gcc 2.95 (thanks to  Ralph Giles and Bernhard Trummer)).
+-	More fixes to the sound system
+-	New command line options (try --help)
+-	DGA support (option --fullscreen)
+
+July 16th, 1999: 0.8.1 
+-	Fixed some bug in the sound system
+-	Added some cheats (unsupported)
+-	Added an icon

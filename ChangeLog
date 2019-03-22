@@ -1,0 +1,52 @@
+March 25th, 2002:
+
+Shape.cpp, Surface.cpp:
+    -	included <memory.h>
+	
+System.hpp, Makefile:
+	Endianness is now autodetected through SDL_BYTEORDER, so there is
+	no need for the BYTE_ORDER variable in the Makefile anymore.
+	
+Object.cpp, Things.cpp, Monster.cpp, Monstrxx.cpp:
+	Initialize some more member variables in the constructors, especially in
+	Monstrxx.cpp. Some of the variables where indeed uninitialized, e.g.
+	"lastShoot", "currentShootDelay", and "nextShootTime". These changes 
+	fix the bug where mosters just seem to freeze and don't move 
+	and shoot despite being "alive".
+
+September 17th, 2001:
+
+Level.cpp:                                                                            
+    -   included <string.h>.
+	Amphetamine should now compile under Linux Mandrake 8.0.
+
+March 27th, 2001:
+
+Endianess is now controlled by a seperate variable "BYTE_ORDER", which can
+be set to either "LITTLE_ENDIAN" (the default) or "BIG_ENDIAN".
+
+--------------------------------------------------------------------------
+
+CMaskedShape::Encode(), 
+CMaskedShape::RenderShapeClipped()
+CMaskedShape::RenderShapeUnclipped()
+
+These functions make must read/write 4-byte words at unaligned memory 
+locations. To avoid problems on architectures that require strict 
+alignment, the macros SET_LONG and GET_LONG perform slow byte-wise
+access by default. If you are on IA-32 and "make" detects this, the
+macro __OPT_MEM_ACCESS__ will be defined to enable faster versions of
+SET_LONG and GET_LONG.
+
+--------------------------------------------------------------------------
+
+Surface.cpp: CGraphicSurface::PaintGraphic()
+	- replaced alignment dependent memory copy code by a call to "memcpy",
+	  because it's fast enough and simpler this way
+
+Shape.cpp: CTexture::RenderShape() and CBackground::RenderShape()
+	- replaced alignment dependent memory copy code by a call to "memcpy",
+	  because it's fast enough and simpler this way
+
+System.cpp/.hpp: 
+	- removed support for libsge

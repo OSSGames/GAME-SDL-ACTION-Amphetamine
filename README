@@ -1,0 +1,52 @@
+AUTHORS
+
+Amphetamine was created by Jonas Spillmann <jsp@stutent.ethz.ch>.
+
+The Unix/SDL version is maintained by Lukas Loehrer <loehrerl@bigfoot.com>
+
+REQUIREMENTS
+
+SDL (Simple DirectMedia Layer) version >= 1.0
+Get it from:
+http://www.devolution.com/~slouken/projects/SDL/index.html
+
+CONTROLS
+
+left/right arrows	move
+left control		fire
+space bar		jump
+tab			action (press buttons)
+ESC			menu
+
+ALT+s			screenshot
+
+You can customize most controls by copying the file user.conf
+from the Amphetamine data directory to your ~/.amph directory.
+Modify it to suit your needs.
+
+GAMEPLAY
+
+Many aspect of the gameplay are controlled by the file amph.conf
+in the main Amphetamine directory. Of most interest are the options
+right at the beginning of the file that control the physics. If the 
+game seems to slow/fast to you, changing some of those values may help.
+
+DGA MODE
+
+Use the option --fullscreen to enable DGA fullscreen support. I cannot test
+this myself, because my X Server does not support it properly. I am grateful
+for any feedback regarding this option. 
+
+SPARC/Solaris
+
+I was told that Amphetamine runs very slow on some SPARC machines. 
+
+LICENCE
+
+This program is licensed under the terms of the GNU GPL, a copy                 
+of which you should have received with this package.
+
+PLANS
+
+- Fixing the clipping bugs
+- Fixing the strange bug involving flying monsters

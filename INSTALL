@@ -1,0 +1,22 @@
+1. Make sure SDL is installed correctly.
+
+2. Have a look at the 'Makefile' and edit it where appropriate.
+   - 'USE_LIB_XPM=FALSE' if you don't have libXpm
+   
+3. Type 'make'. This should build the Amphetamine binary. You can safely
+   ignore the numerous warnings. If the compilation fails, you are in
+   in trouble. Try to tweak the 'Makefile'. You have to delete
+   '-funroll-loops' if you are still using gcc 2.7.2.3 
+   
+4. Become root and type 'make install'. This will install the binary to
+   the directory specified in the makefile (default is '/usr/local/games/amph').
+   It will also create a symbolic link.
+
+5. You have managed the difficult bit. Now, you have to install the data files
+   required by the game. Get 'amphetamine-${VERSION}.tar.bz' an do:
+   - cd /usr/local/games
+   - bzip2 -cd ~/amphetamine-data-0.8.tar.bz | tar xv
+   
+   (Note: the exact commands depend on your syste configuration)     
+
+6. type 'amph' in order to run the game and have fun!

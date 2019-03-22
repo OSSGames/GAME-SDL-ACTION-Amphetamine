@@ -1,0 +1,16 @@
+KNOWN PROBLEMS
+
+- Clipping sometimes fails, i.e. you can walk through walls or get stuck
+- There's a problem with flying monsters. They sometimes get stuck
+  in the wall or will stick at the top of the screen an won't go
+  away until a new level is entered. Sometimes, the game gets  completely
+  corrupted; the player may end up in the wall with the monster and die.
+- There is a problem with C++ destructors not being called because they
+  are not declared "virtual" when the actually should. E.g. in 
+  CApplication::UnloadLevelData(), instances of different subclasses of
+  CThing are deleted through a CThing pointer; as a result only 
+  CThing::~CThing() is actually called, but not the destructor of the
+  actual subclasses. Unfortunately, there seem to be bugs in some of those
+  destructors. When just declaring CThings's of even CObject's destructor 
+  virtual, the game becomes very unstable and crashes on changing between
+  different levels.
